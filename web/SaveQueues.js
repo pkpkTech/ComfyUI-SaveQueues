@@ -65,8 +65,8 @@ app.registerExtension({
                     if (Array.isArray(data.queue_pending)) {
                         for (const p of data.queue_pending.toSorted((a, b) => a[0] - b[0])) {
                             await api.queuePrompt(0, {
-                                output: data.queue_running[0][2],
-                                workflow: data.queue_running[0][3]
+                                output: p[2],
+                                workflow: p[3]
                             });
                         }
                     }
